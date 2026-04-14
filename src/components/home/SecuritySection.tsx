@@ -17,15 +17,23 @@ export default function SecuritySection() {
           style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: 245, width: 1281.5, height: 264.5, objectFit: 'cover' }} />
       </section>
 
-      {/* ── MOBILE ── */}
+      {/* ── MOBILE ── (image 11 = securityImgMobile — portrait/vertical version) */}
       <section className="sec-mobile" style={{ display: 'none', background: 'black', padding: '40px 20px' }}>
         <p style={{ fontSize: 35, fontWeight: 700, lineHeight: '42px', color: 'white', textAlign: 'center', marginBottom: 24 }}>
           Unbreakable standard of security &amp; convenience
         </p>
         <div style={{ height: 1, background: 'rgba(255,255,255,0.2)', marginBottom: 24 }} />
+        {/* image 11 — vertical/portrait version of security image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={ASSETS.securityImg} alt="Security features"
-          style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: 12 }} />
+        <img src={ASSETS.securityImgMobile}
+          alt="Security features"
+          style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: 12, display: 'block' }}
+          onError={(e) => {
+            // fallback to desktop image if mobile version not found
+            const target = e.target as HTMLImageElement
+            target.src = ASSETS.securityImg
+          }}
+        />
       </section>
 
       <style>{`
