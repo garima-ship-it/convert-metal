@@ -44,8 +44,8 @@ export default function ConvertSection() {
         <div style={{ height: 1, background: 'rgba(255,255,255,0.2)', marginBottom: 20 }} />
         <div style={{ borderRadius: 12, overflow: 'hidden', marginBottom: 24, background: '#111' }}>
           <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 12 }}>
-            <source src="/videos/convert-card.webm" type="video/webm" />
-            <source src="/videos/convert-card.mp4" type="video/mp4" />
+            <source src="/videos/cardVideo (1).webm" type="video/webm" />
+            <source src="/videos/cardVideo (1).mp4" type="video/webm" />
           </video>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
