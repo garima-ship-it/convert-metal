@@ -21,6 +21,7 @@ export default function StickyCTA() {
   }, [])
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
     if (window.innerWidth > 768) return
     setVisible(false)
     const handleScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85)
@@ -65,3 +66,13 @@ export default function StickyCTA() {
           .cta-timer-band { height: 24px !important; }
           .cta-timer-band span { font-size: 12px !important; }
           .cta-left { padding-left: 12px !important; gap: 8px !important; }
+          .cta-label { font-size: 13px !important; }
+          .cta-mrp { font-size: 14px !important; }
+          .cta-old { font-size: 14px !important; }
+          .cta-buy-btn { right: 10px !important; padding: 0 10px !important; height: 30px !important; }
+          .cta-buy-btn span { font-size: 12px !important; }
+        }
+      `}</style>
+    </div>
+  )
+}
