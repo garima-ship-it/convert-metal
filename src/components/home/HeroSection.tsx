@@ -61,7 +61,7 @@ export default function HeroSection() {
         </p>
 
         {/* Card video */}
-        <div style={{ margin: '0 auto', width: '85%', borderRadius: 16, overflow: 'hidden' }}>
+        <div style={{ margin: '0 auto', width: '60%', borderRadius: 16, overflow: 'hidden' }}>
           <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 16 }}>
             <source src="/videos/hero-card.mp4" type="video/mp4" />
           </video>
