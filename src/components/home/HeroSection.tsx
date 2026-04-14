@@ -61,7 +61,7 @@ export default function HeroSection() {
         </p>
 
         {/* Card video — reduced height */}
-        <div style={{ margin: '0 auto', width: '90%', borderRadius: 16, overflow: 'hidden', position: 'relative', maxHeight: 220 }}>
+        <div style={{ margin: '0 auto', width: '90%', borderRadius: 16, overflow: 'hidden', position: 'relative', maxHeight: 300 }}>
           <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 16, maxHeight: 220, objectFit: 'cover' }}>
             <source src="/videos/hero-card.mp4" type="video/mp4" />
           </video>
