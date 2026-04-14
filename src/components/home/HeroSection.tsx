@@ -57,23 +57,23 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Heading */}
-        <h1 className="text-gradient-silver" style={{ textAlign: 'center', fontSize: 35, fontWeight: 800, lineHeight: '42px', padding: '16px 26px 0', marginBottom: 12 }}>
+        {/* Heading — bigger font (change 4, 5, 6) */}
+        <h1 className="text-gradient-silver" style={{ textAlign: 'center', fontSize: 42, fontWeight: 800, lineHeight: '48px', padding: '16px 26px 0', marginBottom: 12 }}>
           Get India&apos;s First Prepaid Metal Card
         </h1>
-        <p style={{ textAlign: 'center', fontSize: 15, color: '#9ca3af', padding: '0 10px', marginBottom: 20 }}>
+        <p style={{ textAlign: 'center', fontSize: 18, color: '#9ca3af', padding: '0 10px', marginBottom: 20 }}>
           Get 4% unlimited cashback on every spend
         </p>
 
-        {/* Card video/image */}
-        <div style={{ margin: '0 auto', width: '90%', borderRadius: 16, overflow: 'hidden', position: 'relative' }}>
-          <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 16 }}>
+        {/* Card video — reduced height */}
+        <div style={{ margin: '0 auto', width: '90%', borderRadius: 16, overflow: 'hidden', position: 'relative', maxHeight: 220 }}>
+          <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 16, maxHeight: 220, objectFit: 'cover' }}>
             <source src="/videos/hero-card.mp4" type="video/mp4" />
           </video>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to bottom, rgba(0,0,0,0), #040404)' }} />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 60, background: 'linear-gradient(to bottom, rgba(0,0,0,0), #040404)' }} />
         </div>
 
-        {/* Benefit boxes */}
+        {/* Benefit boxes — NO badge element (remove item 2) */}
         <div style={{ display: 'flex', gap: 8, padding: '20px 10px 0', justifyContent: 'center' }}>
           {benefits.map((b, i) => (
             <div key={i} style={{ border: '0.3px solid rgba(255,255,255,0.7)', borderRadius: 10, width: 98, height: 90, position: 'relative', flexShrink: 0 }}>
@@ -83,17 +83,17 @@ export default function HeroSection() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={b.icon2} alt="" style={{ width: 25, height: 25, borderRadius: 3, objectFit: 'cover', transform: `rotate(${b.rot2})` }} />
               </div>
-              <div style={{ position: 'absolute', bottom: 6, left: 0, right: 0, textAlign: 'center', fontSize: 10, color: '#9ca3af', lineHeight: '14px', whiteSpace: 'pre-line' }}>
+              <div style={{ position: 'absolute', bottom: 6, left: 0, right: 0, textAlign: 'center', fontSize: 11, color: '#9ca3af', lineHeight: '14px', whiteSpace: 'pre-line' }}>
                 {b.label}
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA — changed to "Buy Now" (item 7→8) */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
           <Link href="/collection" style={{ background: 'white', borderRadius: 10, height: 48, width: 226, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-            <span style={{ fontSize: 15, fontWeight: 500, color: 'black' }}>Explore Luxury Finishes</span>
+            <span style={{ fontSize: 15, fontWeight: 500, color: 'black' }}>Buy Now</span>
           </Link>
         </div>
 
