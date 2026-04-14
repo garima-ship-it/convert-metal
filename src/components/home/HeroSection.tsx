@@ -50,12 +50,7 @@ export default function HeroSection() {
 
       {/* ── MOBILE HERO ── */}
       <section className="hero-mobile" style={{ display: 'none', background: '#040404', width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 32 }}>
-        {/* Badge */}
-        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 20 }}>
-          <div style={{ background: 'rgba(119,118,116,0.12)', border: '1px solid rgba(139,139,139,0.3)', borderRadius: 14, padding: '6px 14px', fontSize: 10, color: 'white' }}>
-            ✨ <span style={{ color: '#d4af37' }}>Premium Metal Card Crafting</span>
-          </div>
-        </div>
+        
 
         {/* Heading — bigger font (change 4, 5, 6) */}
         <h1 className="text-gradient-silver" style={{ textAlign: 'center', fontSize: 42, fontWeight: 800, lineHeight: '48px', padding: '16px 26px 0', marginBottom: 12 }}>
