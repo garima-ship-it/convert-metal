@@ -45,17 +45,26 @@ export default function ConvertSection() {
           <p style={{ fontSize: 16, color: 'rgba(214,214,214,0.82)', textAlign: 'center' }}>FREE Movie Tickets worth <strong style={{ color: 'white' }}>₹300</strong></p>
         </div>
         <div style={{ height: 1, background: 'rgba(255,255,255,0.2)', marginBottom: 20 }} />
-        {/* Video */}
-        <div style={{ borderRadius: 12, overflow: 'hidden', marginBottom: 24 }}>
-          <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 12 }}>
+
+        {/* Video — properly configured for mobile */}
+        <div style={{ borderRadius: 12, overflow: 'hidden', marginBottom: 24, position: 'relative', background: '#111' }}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: '100%', display: 'block', borderRadius: 12 }}
+          >
             <source src="/videos/convert-card.webm" type="video/webm" />
             <source src="/videos/convert-card.mp4" type="video/mp4" />
           </video>
         </div>
+
+        {/* CTA — "Buy Now" (item 13) */}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Link href="/collection"
             style={{ background: 'white', borderRadius: 13, height: 45, width: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-            <span style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>Avail exclusive benefits</span>
+            <span style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>Buy Now</span>
           </Link>
         </div>
       </section>
