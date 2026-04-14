@@ -22,9 +22,9 @@ export default function SecuritySection() {
         <p style={{ fontSize: 28, fontWeight: 700, lineHeight: '36px', color: 'white', textAlign: 'center', marginBottom: 24, padding: '0 20px' }}>
           Unbreakable standard of security &amp; convenience
         </p>
-        <div style={{ height: 1, background: 'rgba(255,255,255,0.2)', marginBottom: 28, margin: '0 20px 28px' }} />
+        <div style={{ height: 1, background: 'rgba(255,255,255,0.2)', margin: '0 20px 28px' }} />
 
-        {/* Horizontally swipeable feature boxes */}
+        {/* Swipeable boxes — just the uploaded images */}
         <div style={{
           display: 'flex',
           gap: 16,
@@ -34,28 +34,11 @@ export default function SecuritySection() {
           paddingBottom: 8,
           scrollbarWidth: 'none',
           WebkitOverflowScrolling: 'touch',
-        }}>
-          {[
-            { img: ASSETS.secBox1, label: 'View your card details in the app' },
-            { img: ASSETS.secBox2, label: 'Manage & set transaction limits' },
-            { img: ASSETS.secBox3, label: 'Reset your card PIN securely' },
-            { img: ASSETS.secBox4, label: 'Pause/Unpause your card' },
-          ].map((item, i) => (
-            <div key={i} style={{
-              flexShrink: 0,
-              width: 200,
-              background: 'linear-gradient(to left, #232324, black)',
-              border: '0.5px solid rgba(255,255,255,0.2)',
-              borderRadius: 8,
-              overflow: 'hidden',
-            }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={item.img} alt={item.label}
-                style={{ width: '100%', height: 130, objectFit: 'cover', display: 'block' }} />
-              <p style={{ fontSize: 14, color: 'white', textAlign: 'center', padding: '14px 12px', lineHeight: '20px' }}>
-                {item.label}
-              </p>
-            </div>
+        } as React.CSSProperties}>
+          {[ASSETS.secBox1, ASSETS.secBox2, ASSETS.secBox3, ASSETS.secBox4].map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={i} src={src} alt={`Security feature ${i + 1}`}
+              style={{ flexShrink: 0, width: 220, height: 'auto', borderRadius: 8, display: 'block' }} />
           ))}
         </div>
       </section>
