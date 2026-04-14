@@ -60,12 +60,11 @@ export default function HeroSection() {
           Get 4% unlimited cashback on every spend
         </p>
 
-        {/* Card video — reduced height */}
-        <div style={{ margin: '0 auto', width: '90%', borderRadius: 16, overflow: 'hidden', position: 'relative', maxHeight: 220 }}>
-          <video autoPlay loop muted playsInline style={{ width: '80%', display: 'block', borderRadius: 16, margin: '0 auto' }}>
+        {/* Card video */}
+        <div style={{ margin: '0 auto', width: '85%', borderRadius: 16, overflow: 'hidden' }}>
+          <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 16 }}>
             <source src="/videos/hero-card.mp4" type="video/mp4" />
           </video>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 100, background: 'linear-gradient(to bottom, rgba(0,0,0,0), #040404)' }} />
         </div>
 
         {/* Benefit boxes — NO badge element (remove item 2) */}
