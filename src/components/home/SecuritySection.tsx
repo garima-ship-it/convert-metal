@@ -3,7 +3,6 @@ import { ASSETS } from '@/lib/data'
 export default function SecuritySection() {
   return (
     <>
-      {/* ── DESKTOP ── */}
       <section className="sec-desktop" style={{ background: 'black', width: '100%', height: 565, overflow: 'hidden', position: 'relative' }}>
         <p style={{ position: 'absolute', left: 79, top: 51, fontSize: 54, fontWeight: 700, lineHeight: '58px', color: 'white', width: 666 }}>
           Unbreakable standard of security &amp; convenience
@@ -17,7 +16,6 @@ export default function SecuritySection() {
           style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: 245, width: 1281.5, height: 264.5, objectFit: 'cover' }} />
       </section>
 
-      {/* ── MOBILE ── portrait version */}
       <section className="sec-mobile" style={{ display: 'none', background: 'black', padding: '40px 20px' }}>
         <p style={{ fontSize: 35, fontWeight: 700, lineHeight: '42px', color: 'white', textAlign: 'center', marginBottom: 24 }}>
           Unbreakable standard of security &amp; convenience
