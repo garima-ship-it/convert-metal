@@ -87,7 +87,7 @@ export default function HeroSection() {
         {/* CTA — changed to "Buy Now" (item 7→8) */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
           <Link href="/collection" style={{ background: 'white', borderRadius: 10, height: 48, width: 226, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-            <span style={{ fontSize: 15, fontWeight: 500, color: 'black' }}>Buy Now at ₹2999</span>
+            <span style={{ fontSize: 15, fontWeight: 500, color: 'black' }}>Buy Now at <span style={{ fontSize: 13, color: '#888', textDecoration: 'line-through' }}>₹5999</span> ₹2999</span>
           </Link>
         </div>
 

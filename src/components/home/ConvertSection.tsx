@@ -51,7 +51,7 @@ export default function ConvertSection() {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Link href="/collection"
             style={{ background: 'white', borderRadius: 13, height: 45, width: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-            <span style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>Buy Now</span>
+            <span style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>Buy Now at ₹2999</span>
           </Link>
         </div>
       </section>
