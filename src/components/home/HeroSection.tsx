@@ -54,7 +54,7 @@ export default function HeroSection() {
           Get 4% unlimited cashback on every spend
         </p>
 
-        {/* Mobile hero image — separate image uploaded as homeCard mob.png */}
+        {/* Mobile hero image — separate image uploaded as heroCard mob.png */}
         <div style={{ width: '100%', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/home/homeCard mob.png" alt="NeoZAP Metal Card"
