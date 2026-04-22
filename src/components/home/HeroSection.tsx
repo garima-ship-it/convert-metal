@@ -57,7 +57,7 @@ export default function HeroSection() {
         {/* Mobile hero image — separate image uploaded as homeCard mob.png */}
         <div style={{ width: '100%', overflow: 'hidden' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/home/homeCard%20mob.png" alt="NeoZAP Metal Card"
+          <img src="/images/home/homeCard mob.png" alt="NeoZAP Metal Card"
             style={{ width: '100%', display: 'block' }} />
         </div>
 
