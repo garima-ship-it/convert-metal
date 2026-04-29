@@ -1,79 +1,54 @@
 import Link from 'next/link'
-import { ASSETS } from '@/lib/data'
 
 export default function Footer() {
-  const paymentLogos = [
-    { src: ASSETS.payVisa, alt: 'Visa' },
-    { src: ASSETS.payMastercard, alt: 'Mastercard' },
-    { src: ASSETS.payPhonePe, alt: 'PhonePe' },
-    { src: ASSETS.payRazorpay, alt: 'Razorpay' },
-    { src: ASSETS.payGPay, alt: 'Google Pay' },
-  ]
-
   return (
-    <>
-      {/* ── DESKTOP ── */}
-      <footer className="footer-desktop" style={{ background: 'black', borderTop: '1px solid rgba(30,41,57,0.5)', padding: '40px 179px 28px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32 }}>
-          <div>
-            <div className="footer-logo-text" style={{ marginBottom: 8 }}>NeoZAP</div>
-            <div style={{ fontSize: 14, color: '#6a7282', lineHeight: 1.6 }}>
-              Premium metal credit cards with<br />laser-engraved designs.
-            </div>
-          </div>
-          <nav style={{ display: 'flex', gap: 32, alignItems: 'center', flexWrap: 'wrap' }}>
-            {[{ label: 'Home', href: '/' }, { label: 'Collection', href: '/collection' }, { label: 'Contact', href: '#' }, { label: 'Privacy', href: '#' }, { label: 'Terms', href: '#' }, { label: 'Refunds', href: '#' }].map(link => (
-              <Link key={link.label} href={link.href} style={{ fontSize: 14, color: '#99a1af', textDecoration: 'none' }}>{link.label}</Link>
-            ))}
-          </nav>
-          <div>
-            <a href="tel:+918421373429" style={{ display: 'block', fontSize: 14, color: '#99a1af', textDecoration: 'none', marginBottom: 4 }}>+91 8421373429</a>
-            <a href="mailto:support@neofinity.in" style={{ display: 'block', fontSize: 14, color: '#99a1af', textDecoration: 'none' }}>support@neofinity.in</a>
-          </div>
-        </div>
-        <div style={{ borderTop: '1px solid rgba(30,41,57,0.5)', paddingTop: 25, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', gap: 6 }}>
-            {paymentLogos.map(p => (
-              <div key={p.alt} style={{ background: 'white', borderRadius: 4, height: 20, padding: '0 4px', display: 'flex', alignItems: 'center' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.src} alt={p.alt} style={{ height: 14, width: 'auto', objectFit: 'contain' }} />
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: 12, color: '#99a1af' }}>© 2026 NeoZAP. All rights reserved.</p>
-        </div>
-      </footer>
+    <footer style={{ background: '#040404', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '48px 60px 32px', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 40 }}>
 
-      {/* ── MOBILE ── */}
-      <footer className="footer-mobile" style={{ display: 'none', background: 'black', borderTop: '1px solid rgba(30,41,57,0.5)', padding: '32px 20px 24px' }}>
-        <div className="footer-logo-text" style={{ marginBottom: 8 }}>NeoZAP</div>
-        <div style={{ fontSize: 13, color: '#6a7282', lineHeight: 1.6, marginBottom: 20 }}>
-          Premium metal credit cards with laser-engraved designs.
+        {/* Left — Logo + description */}
+        <div style={{ maxWidth: 320 }}>
+          <p style={{ fontSize: 22, fontWeight: 800, background: 'linear-gradient(95.32deg,rgb(237,237,239) 3.75%,rgb(97,95,105) 95.24%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 12 }}>
+            NeoZAP
+          </p>
+          <p style={{ fontSize: 13, color: '#6b7280', lineHeight: '22px' }}>
+            India&apos;s first prepaid metal card. Premium quality, unlimited cashback, and luxury finishes — built for those who demand more.
+          </p>
         </div>
-        <nav style={{ display: 'flex', flexWrap: 'wrap', gap: '12px 24px', marginBottom: 24 }}>
-          {[{ label: 'Home', href: '/' }, { label: 'Collection', href: '/collection' }, { label: 'Contact', href: '#' }, { label: 'Privacy', href: '#' }, { label: 'Terms', href: '#' }, { label: 'Refunds', href: '#' }].map(link => (
-            <Link key={link.label} href={link.href} style={{ fontSize: 13, color: '#99a1af', textDecoration: 'none' }}>{link.label}</Link>
-          ))}
-        </nav>
-        <div style={{ borderTop: '1px solid rgba(30,41,57,0.5)', paddingTop: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-            {paymentLogos.map(p => (
-              <div key={p.alt} style={{ background: 'white', borderRadius: 4, height: 20, padding: '0 4px', display: 'flex', alignItems: 'center' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.src} alt={p.alt} style={{ height: 14, width: 'auto', objectFit: 'contain' }} />
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: 11, color: '#99a1af' }}>© 2026 NeoZAP. All rights reserved.</p>
+
+        {/* Right — 3 links */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-end' }}>
+          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'white')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#d1d5db')}>
+            Collection
+          </Link>
+          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'white')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#d1d5db')}>
+            Terms &amp; Conditions
+          </Link>
+          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'white')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#d1d5db')}>
+            Contact Us
+          </Link>
         </div>
-      </footer>
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <p style={{ fontSize: 12, color: '#4b5563' }}>© {new Date().getFullYear()} NeoZAP. All rights reserved.</p>
+        <p style={{ fontSize: 12, color: '#374151' }}>Powered by NeoFinity Services Private Limited</p>
+      </div>
 
       <style>{`
         @media (max-width: 768px) {
-          .footer-desktop { display: none !important; }
-          .footer-mobile { display: block !important; }
+          footer { padding: 36px 20px 24px !important; }
+          footer > div:first-child { flex-direction: column !important; gap: 32px !important; }
+          footer > div:first-child > div:last-child { align-items: flex-start !important; }
+          footer > div:last-child { flex-direction: column !important; gap: 8px !important; }
         }
       `}</style>
-    </>
+    </footer>
   )
 }
