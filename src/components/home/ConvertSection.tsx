@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation'
 // ⚠️ These Figma URLs expire in 7 days — download and save as:
 // convertBannerDesktop.png → public/images/home/convertBannerDesktop.png
 // convertBannerMobile.png  → public/images/home/convertBannerMobile.png
-const desktopBanner = "https://www.figma.com/api/mcp/asset/baa7107b-5987-436e-b552-6cda3b529810"
-const mobileBanner  = "https://www.figma.com/api/mcp/asset/2b9d3c4c-5a5a-43e0-9a44-4c92200d46b7"
+const desktopBanner = "/images/home/convertBannerDesktop.png"
+const mobileBanner  = "/images/home/convertBannerMobile.png"
 
 export default function ConvertSection() {
   const router = useRouter()
