@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import { ASSETS } from '@/lib/data'
-import type { Card } from '@/types'
+
+// Defined locally to avoid circular imports
+interface Card {
+  id: number; name: string; category: string; price: number
+  dprice?: number | null; disc?: number | null; bestseller?: boolean
+  priority?: number | null; imgCol?: string | null
+}
 
 const FALLBACK_CARDS: Card[] = [
   { id: 1, name: 'KK', category: 'exclusive', price: 3999, dprice: 1700 },
@@ -89,7 +95,6 @@ export default function BestsellerSection({ cards }: Props) {
       <section className="bs-mobile" style={{ display: 'none', background: '#040404', padding: '40px 0 40px' }}>
         <p style={{ textAlign: 'center', fontSize: 20, fontWeight: 700, color: 'white', marginBottom: 6 }}>BestSeller Metal Credit Cards</p>
         <div style={{ width: 66, height: 3, background: '#d9d9d9', margin: '0 auto 24px' }} />
-        {/* Horizontally scrollable row */}
         <div style={{ display: 'flex', gap: 30, overflowX: 'auto', paddingLeft: 35, paddingRight: 35, paddingBottom: 8, scrollbarWidth: 'none' }}>
           {bestsellers.map(card => <CardItem key={card.id} card={card} />)}
         </div>
