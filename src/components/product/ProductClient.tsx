@@ -1,7 +1,24 @@
 'use client'
 import { useState } from 'react'
-import type { Card } from '@/types'
 import ServiceSelectModal from '@/components/checkout/ServiceSelectModal'
+
+// Defined locally to avoid circular imports
+interface CardColor { hex: string; name: string }
+interface Card {
+  id: number
+  name: string
+  category: string
+  price: number
+  dprice?: number | null
+  disc?: number | null
+  desc?: string
+  features?: string[]
+  bestseller?: boolean
+  colors?: CardColor[]
+  imgCol?: string | null
+  imgChip?: string | null
+  imgBack?: string | null
+}
 
 interface Props { card: Card }
 
