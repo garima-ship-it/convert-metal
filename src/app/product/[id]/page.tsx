@@ -6,7 +6,6 @@ import Footer from '@/components/shared/Footer'
 import ProductClient from '@/components/product/ProductClient'
 import ReviewsCarousel from '@/components/product/ReviewsCarousel'
 import { fetchCatalog, ASSETS } from '@/lib/data'
-import type { Card } from '@/types'
 
 type Props = { params: { id: string } }
 
@@ -25,7 +24,7 @@ export function generateStaticParams() { return [] }
 
 export default async function ProductPage({ params }: Props) {
   const catalog = await fetchCatalog()
-  const cards: Card[] = catalog?.cards ?? []
+  const cards = catalog?.cards ?? []
   const card = cards.find(c => c.id === Number(params.id))
   if (!card) notFound()
 
