@@ -15,8 +15,8 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Right — 3 links horizontal */}
-        <div style={{ display: 'flex', flexDirection: 'row', gap: 36, alignItems: 'center' }}>
+        {/* Right — 3 links horizontal on desktop */}
+        <div className="footer-links">
           <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>
             Collection
           </Link>
@@ -36,10 +36,16 @@ export default function Footer() {
       </div>
 
       <style>{`
+        .footer-links {
+          display: flex;
+          flex-direction: row;
+          gap: 36px;
+          align-items: center;
+        }
         @media (max-width: 768px) {
           footer { padding: 36px 20px 24px !important; }
           footer > div:first-child { flex-direction: column !important; gap: 28px !important; align-items: flex-start !important; }
-          footer > div:first-child > div:last-child { flex-direction: column !important; gap: 16px !important; }
+          .footer-links { flex-direction: column !important; gap: 16px !important; align-items: flex-start !important; }
           footer > div:last-child { flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
         }
       `}</style>
