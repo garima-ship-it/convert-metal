@@ -1,37 +1,29 @@
 'use client'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import type { Card } from '@/types'
+import ServiceSelectModal from '@/components/checkout/ServiceSelectModal'
 
 interface Props { card: Card }
 
 export default function ProductClient({ card }: Props) {
-  const router = useRouter()
   const [selectedColor, setSelectedColor] = useState(0)
   const [qty, setQty] = useState(1)
+  const [showModal, setShowModal] = useState(false)
 
   const images = [card.imgCol, card.imgChip, card.imgBack].filter(Boolean) as string[]
   const mainImg = images[selectedColor] ?? images[0]
   const discPct = card.disc ?? (card.price && card.dprice
     ? Math.round((1 - card.dprice / card.price) * 100) : null)
 
-  const handleBuyNow = () => {
-    // Read flow set by whichever CTA was tapped
-    const flow = sessionStorage.getItem('nz_flow') ?? 'neozap'
-    const params = new URLSearchParams({
-      flow,
-      productId: String(card.id),
-      productName: card.name,
-      price: String(card.price),
-      dprice: String(card.dprice ?? card.price),
-      img: card.imgCol ?? '',
-      qty: String(qty),
-    })
-    router.push(`/checkout?${params.toString()}`)
-  }
-
   return (
     <>
+      {showModal && (
+        <ServiceSelectModal
+          card={card}
+          onClose={() => setShowModal(false)}
+        />
+      )}
+
       {/* ── DESKTOP ── */}
       <div className="product-desktop" style={{ display: 'flex', gap: 60, padding: '0 79px 60px' }}>
         <div style={{ width: 500, flexShrink: 0 }}>
@@ -94,7 +86,7 @@ export default function ProductClient({ card }: Props) {
               <span style={{ width: 40, textAlign: 'center', fontSize: 16 }}>{qty}</span>
               <button onClick={() => setQty(q => q+1)} style={{ width: 40, height: 50, background: 'none', border: 'none', color: 'white', fontSize: 20, cursor: 'pointer' }}>+</button>
             </div>
-            <button onClick={handleBuyNow}
+            <button onClick={() => setShowModal(true)}
               style={{ flex: 1, height: 50, background: 'white', borderRadius: 10, border: 'none', fontSize: 16, fontWeight: 700, color: 'black', cursor: 'pointer' }}>
               Buy Now — ₹{((card.dprice ?? card.price) * qty).toLocaleString('en-IN')}
             </button>
@@ -164,7 +156,7 @@ export default function ProductClient({ card }: Props) {
           )}
         </div>
 
-        {/* Fixed bottom */}
+        {/* Fixed bottom bar */}
         <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.08)', padding: '12px 20px', display: 'flex', gap: 12, alignItems: 'center', zIndex: 50 }}>
           <div style={{ display: 'flex', alignItems: 'center', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 8, flexShrink: 0 }}>
             <button onClick={() => setQty(q => Math.max(1,q-1))} style={{ width: 36, height: 44, background: 'none', border: 'none', color: 'white', fontSize: 20, cursor: 'pointer' }}>−</button>
@@ -175,7 +167,7 @@ export default function ProductClient({ card }: Props) {
             <p style={{ fontSize: 10, color: '#6b7280' }}>Total</p>
             <p style={{ fontSize: 17, fontWeight: 800 }}>₹{((card.dprice ?? card.price) * qty).toLocaleString('en-IN')}</p>
           </div>
-          <button onClick={handleBuyNow}
+          <button onClick={() => setShowModal(true)}
             style={{ height: 44, padding: '0 24px', background: 'white', borderRadius: 8, border: 'none', fontSize: 15, fontWeight: 700, color: 'black', cursor: 'pointer', flexShrink: 0 }}>
             Buy Now
           </button>
