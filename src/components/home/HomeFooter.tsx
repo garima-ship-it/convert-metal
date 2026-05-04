@@ -1,109 +1,54 @@
 import Link from 'next/link'
-import { ASSETS } from '@/lib/data'
 
 export default function HomeFooter() {
-  const paymentLogos = [
-    { src: ASSETS.payVisa, alt: 'Visa' },
-    { src: ASSETS.payMastercard, alt: 'Mastercard' },
-    { src: ASSETS.payPhonePe, alt: 'PhonePe' },
-    { src: ASSETS.payRazorpay, alt: 'Razorpay' },
-    { src: ASSETS.payGPay, alt: 'Google Pay' },
-  ]
-
-  const socialLinks = [
-    { label: 'f' }, { label: 'in' }, { label: '𝕏' }, { label: 'gh' }
-  ]
-
-  const footerCols = [
-    { heading: 'Services', links: ['Exclusive Cards', 'Simple Cards', '2 In 1 Cards', 'Multipurpose Cards', 'Business Cards'] },
-    { heading: 'Company', links: ['About', 'Meet the Team', 'Accounts Review'] },
-    { heading: 'Helpful Links', links: ['Contact', 'FAQs', 'How We Work', 'Live Chat'] },
-    { heading: 'Legal', links: ['Terms and Condition', 'Privacy Policy', 'Cancellation Policy', 'Shipping Policy', 'Return Policy'] },
-  ]
-
   return (
-    <>
-      {/* ── DESKTOP ── */}
-      <footer className="hf-desktop" style={{ background: '#040404', width: '100%', padding: '60px 110px 52px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '370px 160px 160px 160px 180px' }}>
-          <div>
-            <div style={{ fontSize: 25, fontWeight: 700, background: 'linear-gradient(95.32deg,rgb(237,237,239) 3.75%,rgb(97,95,105) 95.24%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'inline-block', marginBottom: 12 }}>
-              NeoZAP
-            </div>
-            <p style={{ fontSize: 13, color: '#6b7280', lineHeight: '22px', marginBottom: 28 }}>
-              We convert your plastic credit and debit cards into premium,<br />durable metal cards. Stylish, secure, and built to impress.
-            </p>
-            <div style={{ display: 'flex', gap: 12 }}>
-              {socialLinks.map(s => (
-                <div key={s.label} style={{ width: 34, height: 34, borderRadius: '50%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#888', cursor: 'pointer' }}>
-                  {s.label}
-                </div>
-              ))}
-            </div>
-          </div>
-          {footerCols.map(col => (
-            <div key={col.heading}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: 'white', marginBottom: 18 }}>{col.heading}</div>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {col.links.map(link => (
-                  <li key={link}><Link href="#" style={{ fontSize: 12, color: '#6b7280', textDecoration: 'none' }}>{link}</Link></li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '40px -110px 0' }} />
-        <div style={{ marginTop: 22, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', gap: 6 }}>
-            {paymentLogos.map(p => (
-              <div key={p.alt} style={{ background: 'white', borderRadius: 4, height: 20, padding: '0 4px', display: 'flex', alignItems: 'center' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.src} alt={p.alt} style={{ height: 14, width: 'auto', objectFit: 'contain' }} />
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: 12, color: '#444' }}>© 2026 NeoZAP. All rights reserved.</p>
-        </div>
-      </footer>
+    <footer style={{ background: '#040404', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '48px 60px 32px', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 40 }}>
 
-      {/* ── MOBILE ── */}
-      <footer className="hf-mobile" style={{ display: 'none', background: '#040404', padding: '40px 35px 32px' }}>
-        <p style={{ fontSize: 20, fontWeight: 700, marginBottom: 12, background: 'linear-gradient(95.32deg, rgb(237, 237, 239) 3.75%, rgb(97, 95, 105) 95.24%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'inline-block' }}>NeoZAP</p>
-        <p style={{ fontSize: 15, color: '#6b7280', lineHeight: '22px', marginBottom: 24 }}>
-          We convert your plastic credit and debit cards into premium, durable metal cards. Stylish, secure, and built to impress.
-        </p>
-        <div style={{ display: 'flex', gap: 12, marginBottom: 32 }}>
-          {socialLinks.map(s => (
-            <div key={s.label} style={{ width: 34, height: 34, borderRadius: '50%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#888' }}>
-              {s.label}
-            </div>
-          ))}
+        {/* Left — Logo + description */}
+        <div style={{ maxWidth: 360 }}>
+          <p style={{ fontSize: 22, fontWeight: 800, background: 'linear-gradient(95.32deg,rgb(237,237,239) 3.75%,rgb(97,95,105) 95.24%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 10 }}>
+            NeoZAP
+          </p>
+          <p style={{ fontSize: 13, color: '#6b7280', lineHeight: '22px' }}>
+            India&apos;s first prepaid metal card. Premium quality, unlimited cashback, and luxury finishes — built for those who demand more.
+          </p>
         </div>
 
-        {/* Two-column footer links */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 32 }}>
-          {footerCols.map(col => (
-            <div key={col.heading}>
-              <div style={{ fontSize: 10, fontWeight: 600, color: 'white', marginBottom: 12 }}>{col.heading}</div>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {col.links.map(link => (
-                  <li key={link}><Link href="#" style={{ fontSize: 10, color: '#6b7280', textDecoration: 'none' }}>{link}</Link></li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Right — 3 links horizontal on desktop */}
+        <div className="footer-links">
+          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>
+            Collection
+          </Link>
+          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>
+            Terms &amp; Conditions
+          </Link>
+          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>
+            Contact Us
+          </Link>
         </div>
+      </div>
 
-        <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 16 }} />
-        <p style={{ fontSize: 12, color: '#444', textAlign: 'center' }}>© 2026 NeoZAP. All rights reserved.</p>
-      </footer>
+      {/* Bottom bar */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <p style={{ fontSize: 12, color: '#4b5563' }}>© {new Date().getFullYear()} NeoZAP. All rights reserved.</p>
+        <p style={{ fontSize: 12, color: '#374151' }}>Powered by NeoFinity Services Private Limited</p>
+      </div>
 
       <style>{`
+        .footer-links {
+          display: flex;
+          flex-direction: row;
+          gap: 36px;
+          align-items: center;
+        }
         @media (max-width: 768px) {
-          .hf-desktop { display: none !important; }
-          .hf-mobile { display: block !important; }
+          footer { padding: 36px 20px 24px !important; }
+          footer > div:first-child { flex-direction: column !important; gap: 28px !important; align-items: flex-start !important; }
+          .footer-links { flex-direction: column !important; gap: 16px !important; align-items: flex-start !important; }
+          footer > div:last-child { flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
         }
       `}</style>
-    </>
+    </footer>
   )
 }
