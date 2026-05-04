@@ -17,19 +17,13 @@ export default function Footer() {
 
         {/* Right — 3 links */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-end' }}>
-          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'white')}
-            onMouseLeave={e => (e.currentTarget.style.color = '#d1d5db')}>
+          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>
             Collection
           </Link>
-          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'white')}
-            onMouseLeave={e => (e.currentTarget.style.color = '#d1d5db')}>
+          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>
             Terms &amp; Conditions
           </Link>
-          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}
-            onMouseEnter={e => (e.currentTarget.style.color = 'white')}
-            onMouseLeave={e => (e.currentTarget.style.color = '#d1d5db')}>
+          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>
             Contact Us
           </Link>
         </div>
