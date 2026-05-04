@@ -4,8 +4,6 @@ export default function Footer() {
   return (
     <footer style={{ background: '#040404', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '48px 60px 32px', fontFamily: 'Inter, sans-serif' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 40 }}>
-
-        {/* Left — Logo + description */}
         <div style={{ maxWidth: 320 }}>
           <p style={{ fontSize: 22, fontWeight: 800, background: 'linear-gradient(95.32deg,rgb(237,237,239) 3.75%,rgb(97,95,105) 95.24%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 12 }}>
             NeoZAP
@@ -14,27 +12,16 @@ export default function Footer() {
             India&apos;s first prepaid metal card. Premium quality, unlimited cashback, and luxury finishes — built for those who demand more.
           </p>
         </div>
-
-        {/* Right — 3 links */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-end' }}>
-          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>
-            Collection
-          </Link>
-          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>
-            Terms &amp; Conditions
-          </Link>
-          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>
-            Contact Us
-          </Link>
+          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>Collection</Link>
+          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>Terms &amp; Conditions</Link>
+          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500 }}>Contact Us</Link>
         </div>
       </div>
-
-      {/* Bottom bar */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <p style={{ fontSize: 12, color: '#4b5563' }}>© {new Date().getFullYear()} NeoZAP. All rights reserved.</p>
         <p style={{ fontSize: 12, color: '#374151' }}>Powered by NeoFinity Services Private Limited</p>
       </div>
-
       <style>{`
         @media (max-width: 768px) {
           footer { padding: 36px 20px 24px !important; }
