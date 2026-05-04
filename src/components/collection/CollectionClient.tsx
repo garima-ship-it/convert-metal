@@ -2,7 +2,27 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { CAT_GRADIENTS } from '@/lib/data'
-import type { Card, Category } from '@/types'
+
+// Defined locally to avoid circular imports
+interface CardColor { hex: string; name: string }
+interface Review { id: number; name: string; rating: number; text: string; verified: boolean }
+interface Card {
+  id: number
+  name: string
+  category: string
+  price: number
+  dprice?: number | null
+  disc?: number | null
+  bestseller?: boolean
+  colors?: CardColor[]
+  reviews?: Review[]
+  imgCol?: string | null
+}
+interface Category {
+  id: string
+  label: string
+  icon?: string | null
+}
 
 function ProductCard({ card }: { card: Card }) {
   const grad = CAT_GRADIENTS[card.category] ?? { c1: '#1a1a2e', c2: '#16213e' }
@@ -76,18 +96,12 @@ interface Props {
 
 export default function CollectionClient({ cards, categories }: Props) {
   const [activeCat, setActiveCat] = useState('all')
-
-  const filtered = activeCat === 'all'
-    ? cards
-    : cards.filter(c => c.category === activeCat)
+  const filtered = activeCat === 'all' ? cards : cards.filter(c => c.category === activeCat)
 
   return (
     <>
-      {/* Category strip */}
       <div className="cat-strip" style={{ padding: '28px 60px 0', display: 'flex', gap: 0, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        {/* All tab */}
-        <div onClick={() => setActiveCat('all')}
-          style={{ width: 140, display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer', paddingBottom: 6 }}>
+        <div onClick={() => setActiveCat('all')} style={{ width: 140, display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer', paddingBottom: 6 }}>
           <div className="cat-box" style={{ width: 100, height: 90, border: `0.3px solid ${activeCat === 'all' ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.35)'}`, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', background: activeCat === 'all' ? 'rgba(255,255,255,0.04)' : 'transparent', transition: 'all .2s', overflow: 'hidden' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/categories/catAll.png" alt="All" style={{ width: 64, height: 64, objectFit: 'contain' }} />
@@ -95,28 +109,20 @@ export default function CollectionClient({ cards, categories }: Props) {
           <span style={{ marginTop: 10, fontSize: 13, color: 'white', fontWeight: activeCat === 'all' ? 600 : 400 }}>All</span>
           <div style={{ height: 2, width: activeCat === 'all' ? 40 : 0, background: 'white', borderRadius: 2, marginTop: 6, transition: 'width .2s' }} />
         </div>
-
-        {categories
-          .filter(cat => cards.some(c => c.category === cat.id))
-          .map(cat => (
-            <div key={cat.id} onClick={() => setActiveCat(cat.id)}
-              style={{ width: 140, display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer', paddingBottom: 6 }}>
-              <div className="cat-box" style={{ width: 100, height: 90, border: `0.3px solid ${activeCat === cat.id ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.35)'}`, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', background: activeCat === cat.id ? 'rgba(255,255,255,0.04)' : 'transparent', transition: 'all .2s', overflow: 'hidden' }}>
-                {cat.icon
-                  // eslint-disable-next-line @next/next/no-img-element
-                  ? <img src={cat.icon} alt={cat.label} style={{ width: 64, height: 64, objectFit: 'contain' }} />
-                  : <span style={{ fontSize: 28 }}>🏷️</span>
-                }
-              </div>
-              <span style={{ marginTop: 10, fontSize: 13, color: 'white', textAlign: 'center', textTransform: 'capitalize', fontWeight: activeCat === cat.id ? 600 : 400 }}>
-                {cat.label}
-              </span>
-              <div style={{ height: 2, width: activeCat === cat.id ? 40 : 0, background: 'white', borderRadius: 2, marginTop: 6, transition: 'width .2s' }} />
+        {categories.filter(cat => cards.some(c => c.category === cat.id)).map(cat => (
+          <div key={cat.id} onClick={() => setActiveCat(cat.id)} style={{ width: 140, display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer', paddingBottom: 6 }}>
+            <div className="cat-box" style={{ width: 100, height: 90, border: `0.3px solid ${activeCat === cat.id ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.35)'}`, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', background: activeCat === cat.id ? 'rgba(255,255,255,0.04)' : 'transparent', transition: 'all .2s', overflow: 'hidden' }}>
+              {cat.icon
+                // eslint-disable-next-line @next/next/no-img-element
+                ? <img src={cat.icon} alt={cat.label} style={{ width: 64, height: 64, objectFit: 'contain' }} />
+                : <span style={{ fontSize: 28 }}>🏷️</span>}
             </div>
-          ))}
+            <span style={{ marginTop: 10, fontSize: 13, color: 'white', textAlign: 'center', textTransform: 'capitalize', fontWeight: activeCat === cat.id ? 600 : 400 }}>{cat.label}</span>
+            <div style={{ height: 2, width: activeCat === cat.id ? 40 : 0, background: 'white', borderRadius: 2, marginTop: 6, transition: 'width .2s' }} />
+          </div>
+        ))}
       </div>
 
-      {/* Heading */}
       <div className="collection-heading" style={{ padding: '48px 60px 0' }}>
         <h2 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, color: 'white' }}>
           {activeCat === 'all' ? `Explore all (${cards.length})` : `${categories.find(c => c.id === activeCat)?.label ?? activeCat} (${filtered.length})`}
@@ -124,7 +130,6 @@ export default function CollectionClient({ cards, categories }: Props) {
         <p style={{ fontSize: 16, color: '#9ca3af' }}>Real life shots of our premium metal cards. Each handcrafted to perfection.</p>
       </div>
 
-      {/* Grid */}
       {filtered.length === 0 ? (
         <div style={{ padding: '60px', textAlign: 'center', color: '#6b7280' }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>💳</div>
