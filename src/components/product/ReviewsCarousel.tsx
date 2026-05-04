@@ -1,21 +1,29 @@
 'use client'
 import { useState } from 'react'
-import type { Review } from '@/types'
+
+// Defined locally to avoid circular imports
+interface Review {
+  id: number
+  name: string
+  rating: number
+  text: string
+  verified: boolean
+}
 
 const GLOBAL_REVIEWS: Review[] = [
   { id: 1, name: 'Shruti N.', rating: 5, text: 'Not only do I love the Joker, I love the special request quote they were able to put on my card. The weight is perfect. I get compliments EVERYWHERE!', verified: true },
-  { id: 2, name: 'Ankit C.',  rating: 5, text: 'Love the card! It looks great and gets tons of compliments. The design team was nice and extremely helpful. I\'ll definitely order one again!', verified: true },
-  { id: 3, name: 'Tanvi C.', rating: 5, text: 'Omg i for sure am gonna get another. Great customer service and reply\'s super quick. Attention to detail great work!', verified: true },
-  { id: 4, name: 'Arjun J.', rating: 5, text: 'The 1st card didn\'t work, BUT they were quick and kindly paid for the shipping fee for the replacement. This 2nd card works perfectly!', verified: true },
+  { id: 2, name: 'Ankit C.',  rating: 5, text: "Love the card! It looks great and gets tons of compliments. The design team was nice and extremely helpful. I'll definitely order one again!", verified: true },
+  { id: 3, name: 'Tanvi C.', rating: 5, text: "Omg i for sure am gonna get another. Great customer service and reply's super quick. Attention to detail great work!", verified: true },
+  { id: 4, name: 'Arjun J.', rating: 5, text: "The 1st card didn't work, BUT they were quick and kindly paid for the shipping fee for the replacement. This 2nd card works perfectly!", verified: true },
   { id: 5, name: 'Aditya T.', rating: 5, text: 'This card came in fast, in amazing packaging and with excellent customer service. Will order again for sure!', verified: true },
   { id: 6, name: 'Sahil S.',  rating: 5, text: 'Absolutely love my NeoZAP card! I get compliments on it all the time!! Great customer service and great turnaround time.', verified: true },
-  { id: 7, name: 'Ritu C.',   rating: 5, text: 'I recently ordered a custom engraving card and I couldn\'t be happier! The process was smooth, received incredibly fast.', verified: true },
+  { id: 7, name: 'Ritu C.',   rating: 5, text: "I recently ordered a custom engraving card and I couldn't be happier! The process was smooth, received incredibly fast.", verified: true },
   { id: 8, name: 'Raj P.',    rating: 5, text: 'Honestly speechless. I freakin love this card. I went and bought a soda IMMEDIATELY just so I can use it 🤣', verified: true },
   { id: 9, name: 'Ankit S.', rating: 4, text: 'I love the way it looks. Customer service was so great handling the issue and they sorted everything quickly.', verified: true },
-  { id: 10, name: 'Shruti T.', rating: 5, text: 'The weight is perfect, the finish is stunning. You\'re dealing with very kind and responsive people — 10/10!', verified: true },
+  { id: 10, name: 'Shruti T.', rating: 5, text: "The weight is perfect, the finish is stunning. You're dealing with very kind and responsive people — 10/10!", verified: true },
 ]
 
-const CARD_W = 404 // 380 + 24 gap
+const CARD_W = 404
 
 export default function ReviewsCarousel({ cardReviews }: { cardReviews?: Review[] }) {
   const reviews = cardReviews && cardReviews.length > 0 ? [...cardReviews, ...GLOBAL_REVIEWS] : GLOBAL_REVIEWS
@@ -55,7 +63,6 @@ export default function ReviewsCarousel({ cardReviews }: { cardReviews?: Review[
         </div>
       </div>
 
-      {/* Navigation */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginTop: 28 }}>
         <button onClick={() => setOffset(o => Math.max(0, o - 1))}
           style={{ width: 50, height: 50, borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'white', fontSize: 18, cursor: 'pointer' }}>
