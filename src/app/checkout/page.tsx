@@ -91,9 +91,10 @@ function CheckoutContent() {
 
   const isDeliveryComplete = delivery.address && delivery.city && delivery.state && delivery.pincode.length === 6
   const isPickupComplete = flow === 'neozap' || (pickup.address && pickup.city && pickup.state && pickup.pincode.length === 6)
-  const canPay = verified && isAddressComplete && isPickupComplete
+  
+const isAddressComplete = !!(delivery.address && delivery.city && delivery.state && delivery.pincode.length === 6)
 
-  const isAddressComplete = !!(delivery.address && delivery.city && delivery.state && delivery.pincode.length === 6)
+  const canPay = verified && isAddressComplete && isPickupComplete
 
   const placeOrder = (method: 'online' | 'cod') => {
     const order = {
