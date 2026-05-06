@@ -84,8 +84,8 @@ export default function BestsellerSection({ cards }: Props) {
             </div>
           ))}
         </div>
-        <Link href="/collection" onClick={() => { if(typeof window !== 'undefined') sessionStorage.setItem('nz_flow','convert') }}
-          style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: 604.9, background: 'rgba(255,255,255,0.06)', border: '1px solid #333', borderRadius: 8, height: 44, width: 148, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+<Link href="/collection"
+  style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: 604.9, background: 'rgba(255,255,255,0.06)', border: '1px solid #333', borderRadius: 8, height: 44, width: 148, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
           <span style={{ fontSize: 14, fontWeight: 600, color: 'white' }}>View All</span>
         </Link>
       </section>
@@ -98,8 +98,8 @@ export default function BestsellerSection({ cards }: Props) {
           {bestsellers.map(card => <CardItem key={card.id} card={card} />)}
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
-          <Link href="/collection" onClick={() => { if(typeof window !== 'undefined') sessionStorage.setItem('nz_flow','convert') }}
-            style={{ background: 'white', borderRadius: 10, height: 45, width: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+<Link href="/collection"
+  style={{ background: 'white', borderRadius: 10, height: 45, width: 250, display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
             <span style={{ fontSize: 16, fontWeight: 500, color: 'black' }}>Explore More Designs</span>
           </Link>
         </div>
