@@ -40,7 +40,7 @@ export default function ConvertHeroSection() {
         </div>
 
         {/* Right — video, smaller and centered */}
-        <div style={{ position: 'absolute', right: 60, top: '50%', transform: 'translateY(-50%)', width: 500, zIndex: 1 }}>
+        <div style={{ position: 'absolute', right: 60, top: '50%', transform: 'translateY(-50%)', width: 620, zIndex: 1 }}>
           {/* Left fade */}
           <div style={{ position: 'absolute', left: 0, top: 0, width: 80, height: '100%', background: 'linear-gradient(to right, #000, transparent)', zIndex: 2, pointerEvents: 'none' }} />
           <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', borderRadius: 12 }}>
