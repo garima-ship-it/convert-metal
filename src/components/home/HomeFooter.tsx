@@ -1,0 +1,36 @@
+import Link from 'next/link'
+
+export default function HomeFooter() {
+  return (
+    <footer style={{ background: '#040404', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '48px 60px 32px', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 40 }}>
+        <div style={{ maxWidth: 360 }}>
+          <p style={{ fontSize: 22, fontWeight: 800, background: 'linear-gradient(135deg, #ffe38d 0%, #f3c770 38%, #e7ac53 75%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: 10 }}>
+            NeoZAP
+          </p>
+          <p style={{ fontSize: 13, color: '#6b7280', lineHeight: '22px' }}>
+            We convert your plastic credit and debit cards into premium, durable metal cards. Stylish, secure, and built to impress.
+          </p>
+        </div>
+        <div className="footer-links">
+          <Link href="/collection" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>Collection</Link>
+          <Link href="/terms" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>Terms &amp; Conditions</Link>
+          <Link href="/contact" style={{ fontSize: 14, color: '#d1d5db', textDecoration: 'none', fontWeight: 500, whiteSpace: 'nowrap' }}>Contact Us</Link>
+        </div>
+      </div>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <p style={{ fontSize: 12, color: '#4b5563' }}>© {new Date().getFullYear()} NeoZAP. All rights reserved.</p>
+        <p style={{ fontSize: 12, color: '#374151' }}>Powered by NeoFinity Services Private Limited</p>
+      </div>
+      <style>{`
+        .footer-links { display: flex; flex-direction: row; gap: 36px; align-items: center; }
+        @media (max-width: 768px) {
+          footer { padding: 36px 20px 24px !important; }
+          footer > div:first-child { flex-direction: column !important; gap: 28px !important; align-items: flex-start !important; }
+          .footer-links { flex-direction: column !important; gap: 16px !important; align-items: flex-start !important; }
+          footer > div:last-child { flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+        }
+      `}</style>
+    </footer>
+  )
+}
