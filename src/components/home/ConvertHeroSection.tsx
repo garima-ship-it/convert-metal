@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 // ⚠️ Images needed in public/images/home/:
 // heroTextImage.png — desktop left side baked text image
 // heroMobileContent.png — mobile baked image (node 478:11707)
-//   Download: https://www.figma.com/api/mcp/asset/538dabe0-abec-48c5-8394-b035f6cd9a81
 
 const goldGradient = 'linear-gradient(135deg, #ffe38d 0%, #f3c770 38%, #e7ac53 75%)'
 
@@ -51,7 +50,7 @@ export default function ConvertHeroSection() {
       </section>
 
       {/* ── MOBILE ── */}
-      <section className="hero-mobile" style={{ display: 'none', background: '#000', width: '100%', overflow: 'hidden' }}>
+      <section className="hero-mobile" style={{ background: '#000', width: '100%', overflow: 'hidden' }}>
         {/* Baked image — has all design elements */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/home/heroMobileContent.png" alt="Convert Your Plastic Payment Card to Metal"
@@ -64,9 +63,11 @@ export default function ConvertHeroSection() {
       </section>
 
       <style>{`
+        @media (min-width: 769px) {
+          .hero-mobile { display: none !important; }
+        }
         @media (max-width: 768px) {
           .hero-desktop { display: none !important; }
-          .hero-mobile { display: block !important; }
         }
       `}</style>
     </>
