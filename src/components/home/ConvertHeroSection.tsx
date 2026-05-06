@@ -21,11 +21,11 @@ export default function ConvertHeroSection() {
       {/* ── DESKTOP ── */}
       <section className="hero-desktop" style={{
         position: 'relative', background: '#000',
-        width: '100%', height: 620, overflow: 'hidden',
+        width: '100%', height: 671, overflow: 'hidden',
       }}>
         {/* Left — text image + CTA */}
-        <div style={{ position: 'absolute', left: 82, top: 197, width: 601, height: 371, zIndex: 2 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+<div style={{ position: 'absolute', left: 82, top: 100, width: 601, height: 371, zIndex: 2 }}>
+  {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/home/heroTextImage.png"
             alt="Convert Your Plastic Payment Card to Metal"
@@ -34,8 +34,8 @@ export default function ConvertHeroSection() {
         </div>
 
         {/* CTA button — below the image */}
-        <div style={{ position: 'absolute', left: 82, top: 603, zIndex: 2 }}>
-          <button onClick={handleExplore} style={{
+<div style={{ position: 'absolute', left: 82, top: 506, zIndex: 2 }}>
+  <button onClick={handleExplore} style={{
             background: goldGradient, borderRadius: 8,
             height: 48, width: 228, border: 'none', cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -45,8 +45,8 @@ export default function ConvertHeroSection() {
         </div>
 
         {/* Right — video */}
-        <div style={{ position: 'absolute', right: 0, top: 0, width: '54%', height: '100%', zIndex: 1 }}>
-          {/* Left fade */}
+<div style={{ position: 'absolute', right: 0, top: 0, width: '45%', height: '100%', zIndex: 1 }}>
+  {/* Left fade */}
           <div style={{ position: 'absolute', left: 0, top: 0, width: 120, height: '100%', background: 'linear-gradient(to right, #000, transparent)', zIndex: 2, pointerEvents: 'none' }} />
           <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}>
             <source src="/videos/cardVideo (1).webm" type="video/webm" />
