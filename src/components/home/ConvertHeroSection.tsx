@@ -21,7 +21,7 @@ export default function ConvertHeroSection() {
       {/* ── DESKTOP ── */}
       <section className="hero-desktop" style={{
         position: 'relative', background: '#000',
-        width: '100%', height: 671, overflow: 'hidden',
+        width: '100%', height: 620, overflow: 'hidden',
       }}>
         {/* Left — text image + CTA */}
         <div style={{ position: 'absolute', left: 82, top: 197, width: 601, height: 371, zIndex: 2 }}>
