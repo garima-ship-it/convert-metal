@@ -3,6 +3,8 @@ import ConvertHeroSection from '@/components/home/ConvertHeroSection'
 import BestsellerSection from '@/components/home/BestsellerSection'
 import SecurityFeaturesSection from '@/components/home/SecurityFeaturesSection'
 import SecuritySection from '@/components/home/SecuritySection'
+import CrossSellSection from '@/components/home/CrossSellSection'
+import RewardsSection from '@/components/home/RewardsSection'
 import FAQSection from '@/components/home/FAQSection'
 import HomeFooter from '@/components/home/HomeFooter'
 import StickyCTA from '@/components/shared/StickyCTA'
@@ -20,6 +22,8 @@ export default async function HomePage() {
         <BestsellerSection cards={cards} />
         <SecurityFeaturesSection />
         <SecuritySection />
+        <CrossSellSection />
+        <RewardsSection />
         <FAQSection />
       </main>
       <HomeFooter />
