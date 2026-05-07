@@ -20,7 +20,6 @@ export default async function HomePage() {
         <ConvertHeroSection />
         <BestsellerSection cards={cards} />
         <SecurityFeaturesSection />
-        <SecuritySection />
         <CrossSellSection />
         <RewardsSection />
         <FAQSection />
