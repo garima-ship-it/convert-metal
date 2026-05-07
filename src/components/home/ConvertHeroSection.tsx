@@ -58,7 +58,7 @@ export default function ConvertHeroSection() {
 
         {/* Video below */}
 {/* Video below */}
-        <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', transform: 'scale(1.4)', transformOrigin: 'center center', marginTop: 40 }}>
+        <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block', transform: 'scale(1.4)', transformOrigin: 'center center', marginTop: 50 }}>
   <source src="/videos/cardVideo (1).webm" type="video/webm" />
         </video>
       </section>
